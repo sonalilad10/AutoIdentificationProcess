@@ -32,7 +32,7 @@
                         <td>  </td>  
                     </tr>  
                     <tr>  
-                        <td class="style2"> </td>  
+                        <td> <asp:Button ID="Button2" runat="server" Text="Reset" OnClick="Reset_Click" BackColor="#FF9933" ForeColor="Black"/>  </td>  
                         <td> <asp:Button ID="Button1" runat="server" Text="Log In" OnClick="Button1_Click" BackColor="#FF9933" ForeColor="Black"/>  </td>  
                         <td> <asp:Label ID="Label3" runat="server" ForeColor="#0033CC"></asp:Label> </td>  
                     </tr>  
@@ -42,7 +42,7 @@
       <footer>
         <ul class="nospace inline pushright">
           <li><a class="btn" href="RegistrationFormCopy.aspx">New User</a></li>
-            <li><a class="btn" href="#">Reset</a></li>
+            
             <li><a class="btn" href="#">Forgot Password</a></li>
           
         </ul>

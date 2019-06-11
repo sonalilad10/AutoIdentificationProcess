@@ -13,7 +13,13 @@ namespace AutoIdentificationProcess
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            Reset_Click(sender, e);
+        }
 
+        public void Reset_Click(Object sender, EventArgs e)
+        {
+            TextUserName.Text = "";
+            TextPassword.Text = "";
         }
 
         public void Button1_Click(object sender, EventArgs e)
