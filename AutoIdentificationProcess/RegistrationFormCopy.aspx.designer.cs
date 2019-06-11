@@ -10,7 +10,7 @@
 namespace AutoIdentificationProcess {
     
     
-    public partial class RegistrationForm {
+    public partial class RegistrationFormCopy {
         
         /// <summary>
         /// form1 control.

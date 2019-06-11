@@ -10,6 +10,6 @@
 namespace AutoIdentificationProcess {
     
     
-    public partial class _Default {
+    public partial class index {
     }
 }

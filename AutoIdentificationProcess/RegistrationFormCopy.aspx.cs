@@ -8,7 +8,7 @@ using System.Web.UI.WebControls;
 
 namespace AutoIdentificationProcess
 {
-    public partial class RegistrationForm : System.Web.UI.Page
+    public partial class RegistrationFormCopy : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -28,14 +28,14 @@ namespace AutoIdentificationProcess
             string password = TextPassword.Text;
             //Console.WriteLine(username + "  " + password);
             SqlConnection con = new SqlConnection(@"Data Source=.;Initial Catalog=AutoIdentificationProcess;Trusted_Connection=true;");
-            string sql = "insert into dbo.UsersData values('" + firstName + "', '"+ lastName + "', "+ age + ", '" + gender + "', '" + contact + "', '" + email +"', '" + address + "', '" + city + "', "+ zipcode + ", '"+ password + "','" + (firstName+lastName) +"')";
+            string sql = "insert into dbo.UsersData values('" + firstName + "', '" + lastName + "', " + age + ", '" + gender + "', '" + contact + "', '" + email + "', '" + address + "', '" + city + "', " + zipcode + ", '" + password + "','" + (firstName + lastName) + "')";
             SqlCommand cmd = new SqlCommand(sql, con);
             con.Open();
             cmd.ExecuteNonQuery();
             WelcomeMessage.Text = "Registration is successful. Your UserName is " + (firstName + lastName);
         }
 
-        
+
         protected void RadioButtonGender_SelectedIndexChanged1(object sender, EventArgs e)
         {
 

@@ -11,7 +11,7 @@ namespace AutoIdentificationProcess
 {
 
 
-    public partial class Contact
+    public partial class ManualDefaults
     {
     }
 }

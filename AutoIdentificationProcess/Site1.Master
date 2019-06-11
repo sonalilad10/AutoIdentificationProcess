@@ -1,4 +1,5 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WebForm1.aspx.cs" Inherits="AutoIdentificationProcess.WebForm1" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="AutoIdentificationProcess.Site1" %>
+
 <!DOCTYPE html>
 <!--
 Template Name: Edgpress
@@ -34,23 +35,12 @@ Licence URI: https://www.os-templates.com/template-terms
   <nav id="mainav" class="hoc clear"> 
     <!-- ################################################################################################ -->
     <ul class="clear">
-        <li class="drop"><a href="Login_demo.aspx">Home</a></li>
-        <li><a class="active" href="RegistrationForm.aspx">Registration</a></li>
-      <li><a class="drop" href="#">Dropdown</a>
-        <ul>
-          <li><a href="#">Level 2</a></li>
-          <li><a class="drop" href="#">Level 2 + Drop</a>
-            <ul>
-              <li><a href="#">Level 3</a></li>
-              <li><a href="#">Level 3</a></li>
-              <li><a href="#">Level 3</a></li>
-            </ul>
-          </li>
-          <li><a href="#">Level 2</a></li>
-        </ul>
-      </li>
-      
-    </ul>
+        <li><a class="drop" href="Login_demo.aspx">Home</a></li>
+        <li><a class="drop" href="RegistrationFormCopy.aspx">Registration</a></li>
+        <li><a class="drop" href="AutoDefaults.aspx">Auto Defaults</a></li>
+        <li><a class="drop" href="ManualDefaults.aspx">Manual Defaults</a></li>
+        <li><a class="drop" href="ReDefaults.aspx">Re-Defaults</a></li>
+     </ul>
     <!-- ################################################################################################ -->
   </nav>
 </div>
@@ -60,33 +50,10 @@ Licence URI: https://www.os-templates.com/template-terms
 <div class="wrapper bgded overlay" style="background-image:url('images/demo/backgrounds/abc.png');">
   <div id="pageintro" class="hoc clear"> 
     <!-- ################################################################################################ -->
-    <article>
-        <h1>Registration Form</h1>
-        
-         <form id="form1" runat="server">
-
-        <div style="font-size: larger; font-family: 'Times New Roman', Times, serif; font-weight: bold; font-style: normal; font-variant: small-caps; text-transform: capitalize;"> 
-            
-        <div style ="width:100%;height:100%; alignment: center">
-            <table style="width: 100%; height: 236px;">
-            
-            <tr><td class="auto-style9">
-                <asp:PlaceHolder ID="DBDataPlaceHolder" runat="server"></asp:PlaceHolder>
-            </td></tr>   
-            </table>
-            </div>
-        </div>
-
-    </form>
-      <footer>
-        <ul class="nospace inline pushright">
-          
-            <li><a class="btn" href="#">Reset</a></li>
-            <li><a class="btn" href="Login_demo.aspx">Already Registered</a></li>
-          
-        </ul>
-      </footer>
-    </article>
+      <div>
+          <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+          </asp:ContentPlaceHolder>
+      </div>
     <!-- ################################################################################################ -->
   </div>
 </div>
@@ -94,64 +61,6 @@ Licence URI: https://www.os-templates.com/template-terms
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
-
-<div class="wrapper row4">
-  <footer id="footer" class="hoc clear"> 
-    <!-- ################################################################################################ -->
-    <div class="one_third first">
-      <h6 class="heading">Vestibulum ante ipsum primis</h6>
-      <ul class="nospace btmspace-30 linklist contact">
-        <li><i class="fa fa-map-marker"></i>
-          <address>
-          Street Name &amp; Number, Town, Postcode/Zip
-          </address>
-        </li>
-        <li><i class="fa fa-phone"></i> +00 (123) 456 7890</li>
-        <li><i class="fa fa-envelope-o"></i> info@domain.com</li>
-      </ul>
-      <ul class="faico clear">
-        <li><a class="faicon-facebook" href="#"><i class="fa fa-facebook"></i></a></li>
-        <li><a class="faicon-twitter" href="#"><i class="fa fa-twitter"></i></a></li>
-        <li><a class="faicon-dribble" href="#"><i class="fa fa-dribbble"></i></a></li>
-        <li><a class="faicon-linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
-        <li><a class="faicon-google-plus" href="#"><i class="fa fa-google-plus"></i></a></li>
-        <li><a class="faicon-vk" href="#"><i class="fa fa-vk"></i></a></li>
-      </ul>
-    </div>
-    <div class="one_third">
-      <h6 class="heading">In faucibus orci luctus</h6>
-      <ul class="nospace linklist">
-        <li>
-          <article>
-            <h2 class="nospace font-x1"><a href="#">Ultrices posuere cubilia</a></h2>
-            <time class="font-xs block btmspace-10" datetime="2045-04-06">Friday, 6<sup>th</sup> April 2045</time>
-            <p class="nospace">Lorem laoreet blandit donec mollis lacinia massa tincidunt malesuada [&hellip;]</p>
-          </article>
-        </li>
-        <li>
-          <article>
-            <h2 class="nospace font-x1"><a href="#">Curae cras tincidunt eros</a></h2>
-            <time class="font-xs block btmspace-10" datetime="2045-04-05">Thursday, 5<sup>th</sup> April 2045</time>
-            <p class="nospace">In id semper turpis in tristique dui ut ac mauris magna nunc eros enim [&hellip;]</p>
-          </article>
-        </li>
-      </ul>
-    </div>
-    <div class="one_third">
-      <h6 class="heading">Tincidunt facilisis eros ut</h6>
-      <p class="nospace btmspace-30">Pulvinar venenatis commodo sed accumsan eu erat nunc ante sagittis a dolor in.</p>
-      <form method="post" action="#">
-        <fieldset>
-          <legend>Newsletter:</legend>
-          <input class="btmspace-15" type="text" value="" placeholder="Name">
-          <input class="btmspace-15" type="text" value="" placeholder="Email">
-          <button type="submit" value="submit">Submit</button>
-        </fieldset>
-      </form>
-    </div>
-    <!-- ################################################################################################ -->
-  </footer>
-</div>
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
