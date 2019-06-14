@@ -14,10 +14,17 @@ namespace AutoIdentificationProcess
         {
 
         }
-        public void Reset_Click(Object sender, EventArgs e)
+        public void Reset_Click(object sender, EventArgs e)
         {
             TextFirstName.Text = "";
             TextLastName.Text = "";
+            TextAge.Text = "";
+            RadioButtonGender.Text = "";
+            TextContact.Text = "";
+            TextEmail.Text = "";
+            TextAddress.Text = "";
+            DropDownListCity.Text = "";
+            TextPassword.Text = "";
         }
 
         protected void RegisterButton_Click(object sender, EventArgs e)
