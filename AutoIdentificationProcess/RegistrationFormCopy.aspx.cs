@@ -14,8 +14,15 @@ namespace AutoIdentificationProcess
         {
 
         }
+        public void Reset_Click(Object sender, EventArgs e)
+        {
+            TextFirstName.Text = "";
+            TextLastName.Text = "";
+        }
+
         protected void RegisterButton_Click(object sender, EventArgs e)
         {
+            string role = DropDownListRole.Text;
             string firstName = TextFirstName.Text;
             string lastName = TextLastName.Text;
             int age = int.Parse(TextAge.Text);
@@ -27,14 +34,30 @@ namespace AutoIdentificationProcess
             int zipcode = int.Parse(DropDownListZipCode.Text);
             string password = TextPassword.Text;
             //Console.WriteLine(username + "  " + password);
-            SqlConnection con = new SqlConnection(@"Data Source=.;Initial Catalog=AutoIdentificationProcess;Trusted_Connection=true;");
-            string sql = "insert into dbo.UsersData values('" + firstName + "', '" + lastName + "', " + age + ", '" + gender + "', '" + contact + "', '" + email + "', '" + address + "', '" + city + "', " + zipcode + ", '" + password + "','" + (firstName + lastName) + "')";
+            SqlConnection con = new SqlConnection(@"Data Source=.;Initial Catalog=AIP;Trusted_Connection=true;");
+            string sql = "insert into dbo.[Registration/Login] values('" + role + "'," + getId() + ", '" + password + "', '" + firstName + "', '" + lastName + "', " + age + ", '" + gender + "', '" + email + "', '" + address + "', " + zipcode + ", '" + city + "','" + (firstName + lastName) + "','" + contact + "')";
             SqlCommand cmd = new SqlCommand(sql, con);
             con.Open();
             cmd.ExecuteNonQuery();
             WelcomeMessage.Text = "Registration is successful. Your UserName is " + (firstName + lastName);
         }
 
+        public int getId()
+        {
+            SqlConnection con = new SqlConnection(@"Data Source=.;Initial Catalog=AIP;Trusted_Connection=true;");
+            SqlCommand cmd = new SqlCommand("select max(Id) from dbo.[Registration/Login]", con);
+           
+            con.Open();
+            int output = 0;
+            SqlDataReader dataReader = cmd.ExecuteReader();
+
+            while (dataReader.Read())
+            {
+                output = int.Parse(""+ dataReader.GetValue(0));
+            }
+
+            return output + 1;
+        }
 
         protected void RadioButtonGender_SelectedIndexChanged1(object sender, EventArgs e)
         {

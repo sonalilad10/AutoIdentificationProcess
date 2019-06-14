@@ -8,9 +8,8 @@ using System.Web.UI.WebControls;
 
 namespace AutoIdentificationProcess
 {
-    public partial class ReDefaults : System.Web.UI.Page
+    public partial class Transactions : System.Web.UI.Page
     {
-        //select* from dbo.defaulters where Default_Status like '%ReDefault%'
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!this.IsPostBack)
@@ -22,7 +21,7 @@ namespace AutoIdentificationProcess
         {
 
             SqlConnection con = new SqlConnection(@"Data Source=.;Initial Catalog=AIP;Trusted_Connection=true;");
-            SqlCommand cmd = new SqlCommand("select* from dbo.defaulters where Default_Status like '%ReDefault%'", con);
+            SqlCommand cmd = new SqlCommand("select * from dbo.TransactionsDetails where User_Id = "+Session["UserId"], con);
             con.Open();
 
             SqlDataAdapter sda = new SqlDataAdapter(cmd);

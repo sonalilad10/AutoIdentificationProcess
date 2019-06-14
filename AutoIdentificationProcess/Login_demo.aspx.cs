@@ -13,7 +13,7 @@ namespace AutoIdentificationProcess
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            Reset_Click(sender, e);
+            
         }
 
         public void Reset_Click(Object sender, EventArgs e)
@@ -24,11 +24,13 @@ namespace AutoIdentificationProcess
 
         public void Button1_Click(object sender, EventArgs e)
         {
+
             string username = TextUserName.Text;
             string password = TextPassword.Text;
+            
             Console.WriteLine(username+"  "+password);
-            SqlConnection con = new SqlConnection(@"Data Source=.;Initial Catalog=AutoIdentificationProcess;Trusted_Connection=true;");
-            SqlCommand cmd = new SqlCommand("select * from dbo.UsersData where UserName=@username and Password=@password", con);
+            SqlConnection con = new SqlConnection(@"Data Source=.;Initial Catalog=AIP;Trusted_Connection=true;");
+            SqlCommand cmd = new SqlCommand("select UserName, Id, Role from [Registration/Login] where UserName=@username and Password=@password", con);
             cmd.Parameters.AddWithValue("@username", TextUserName.Text);
             cmd.Parameters.AddWithValue("@password", TextPassword.Text);
             
@@ -38,7 +40,9 @@ namespace AutoIdentificationProcess
            
             while (dataReader.Read())
             {
-                output = output + dataReader.GetValue(0) + "-" + dataReader.GetValue(1) + "</br>";
+                output = output + dataReader.GetValue(0)+ "</br>";
+                Session["UserId"] = dataReader.GetValue(1);
+                Session["Role"] = dataReader.GetValue(2);
             }
 
             con.Close();

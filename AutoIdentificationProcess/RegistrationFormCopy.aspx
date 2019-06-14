@@ -15,6 +15,16 @@
                 <td class="auto-style11"></td>
             </tr>
                 <tr>
+                    <td class="auto-style1"><asp:Label ID="Label4" runat="server" Text="Role" ForeColor="Black"></asp:Label></td>
+                    <td class="auto-style6">
+                        <asp:DropDownList ID="DropDownListRole" runat="server" ForeColor="Black">
+                            <asp:ListItem>Admin</asp:ListItem>
+                            <asp:ListItem>User</asp:ListItem>
+                            </asp:DropDownList>
+                    </td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
                     <td class="auto-style9"><asp:Label ID="Label1" runat="server" Text="First Name" ForeColor="Black"></asp:Label></td>
                     <td class="auto-style10"><asp:TextBox ID="TextFirstName" runat="server" ForeColor="Black" ></asp:TextBox></td>
                     <td class="auto-style11">
@@ -108,6 +118,7 @@
                 </tr>
             
             <tr><td class="auto-style9"></td>
+                <td class="auto-style10"> <asp:Button ID="ResetButton" runat="server" Text="Reset" OnClick="Reset_Click" BackColor="#FF9933" ForeColor="Black"/>  </td>
                 <td class="auto-style10"> <asp:Button ID="Button1" runat="server" Text="Register" OnClick="RegisterButton_Click" BackColor="#FF9933" ForeColor="Black"/>  </td>
                 <td class="auto-style11"><asp:Label ID="WelcomeMessage" runat="server" ForeColor="Green"></asp:Label></td>
              </tr>   
@@ -118,9 +129,7 @@
     </form>
       <footer>
         <ul class="nospace inline pushright">
-          
-            <li><a class="btn" href="#">Reset</a></li>
-            <li><a class="btn" href="Login_demo.aspx">Already Registered</a></li>
+          <li><a class="btn" href="Login_demo.aspx">Already Registered</a></li>
           
         </ul>
       </footer>

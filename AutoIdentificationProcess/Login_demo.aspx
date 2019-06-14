@@ -42,10 +42,7 @@
       <footer>
         <ul class="nospace inline pushright">
           <li><a class="btn" href="RegistrationFormCopy.aspx">New User</a></li>
-            
-            <li><a class="btn" href="#">Forgot Password</a></li>
-          
-        </ul>
+           </ul>
       </footer>
     </article>
     </asp:Content>

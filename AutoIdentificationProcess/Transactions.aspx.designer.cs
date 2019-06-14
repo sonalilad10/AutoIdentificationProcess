@@ -10,7 +10,7 @@
 namespace AutoIdentificationProcess {
     
     
-    public partial class ManualDefaults {
+    public partial class Transactions {
         
         /// <summary>
         /// GridView1 control.

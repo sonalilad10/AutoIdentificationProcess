@@ -21,15 +21,12 @@ namespace AutoIdentificationProcess
         protected void BindGrid()
         {
 
-            SqlConnection con = new SqlConnection(@"Data Source=.;Initial Catalog=AutoIdentificationProcess;Trusted_Connection=true;");
-            SqlCommand cmd = new SqlCommand("select * from dbo.UsersData", con);
+            SqlConnection con = new SqlConnection(@"Data Source=.;Initial Catalog=AIP;Trusted_Connection=true;");
+            SqlCommand cmd = new SqlCommand("select * from dbo.defaulters where Borrower_Rating >=8 and Accrual_Status in (2,3,4,5)", con);
             con.Open();
 
             SqlDataAdapter sda = new SqlDataAdapter(cmd);
-            //DataTable dt = new DataTable();
-            //sda.Fill(dt);
-            //GridView1.DataSource = dt;
-
+            
             SqlDataReader rdr = cmd.ExecuteReader();
             GridView1.DataSource = rdr;
             GridView1.DataBind();
