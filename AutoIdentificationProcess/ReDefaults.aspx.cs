@@ -38,5 +38,11 @@ namespace AutoIdentificationProcess
             GridView1.PageIndex = e.NewPageIndex;
             this.BindGrid();
         }
+
+        protected void Logout_Click(object sender, EventArgs e)
+        {
+            Session.Abandon();
+            Response.Redirect("~/Login_demo.aspx");
+        }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.Eventing.Reader;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -11,7 +12,38 @@ namespace AutoIdentificationProcess
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            string role = (string) Session["Role"];
+            Update_Tabs_Visibility(Session["Role"] as string);
         }
+
+        public void Update_Tabs_Visibility(string role)
+        {
+            if (role!= null && role.Equals("Admin"))
+            {
+                Registration.Visible = false;
+                AutoDefaults.Visible = true;
+                ReDefaults.Visible = true;
+                ManualDefaults.Visible = true;
+                Transactions.Visible = false;
+                
+            }
+            else if (role != null && role.Equals("User"))
+            {
+                Registration.Visible = false;
+                AutoDefaults.Visible = false;
+                ReDefaults.Visible = false;
+                ManualDefaults.Visible = false;
+                Transactions.Visible = true;
+                
+            }
+            else
+            {
+                AutoDefaults.Visible = false;
+                ReDefaults.Visible = false;
+                ManualDefaults.Visible = false;
+                Transactions.Visible = false;
+                
+            }
+        }
+        
     }
 }

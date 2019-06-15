@@ -37,7 +37,8 @@
                         <td> <asp:Label ID="Label3" runat="server" ForeColor="#0033CC"></asp:Label> </td>  
                     </tr>  
                 </table>  
-            </div>  
+            </div> 
+            
         </form>  
       <footer>
         <ul class="nospace inline pushright">

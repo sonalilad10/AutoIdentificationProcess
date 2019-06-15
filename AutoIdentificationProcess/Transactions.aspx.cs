@@ -12,6 +12,9 @@ namespace AutoIdentificationProcess
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            Site1 master = Master as Site1;
+            master.Update_Tabs_Visibility(Session["Role"] as string);
+
             if (!this.IsPostBack)
             {
                 BindGrid();
@@ -19,7 +22,8 @@ namespace AutoIdentificationProcess
         }
         protected void BindGrid()
         {
-
+            Site1 master = Master as Site1;
+            master.Update_Tabs_Visibility(Session["Role"] as string);
             SqlConnection con = new SqlConnection(@"Data Source=.;Initial Catalog=AIP;Trusted_Connection=true;");
             SqlCommand cmd = new SqlCommand("select * from dbo.TransactionsDetails where User_Id = "+Session["UserId"], con);
             con.Open();
@@ -36,6 +40,11 @@ namespace AutoIdentificationProcess
         {
             GridView1.PageIndex = e.NewPageIndex;
             this.BindGrid();
+        }
+        protected void Logout_Click(object sender, EventArgs e)
+        {
+            Session.Abandon();
+            Response.Redirect("~/Login_demo.aspx");
         }
     }
 }

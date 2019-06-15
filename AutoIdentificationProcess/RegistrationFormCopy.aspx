@@ -117,7 +117,7 @@
                     <td class="auto-style11"><asp:CompareValidator ID="CompareValidator1" runat="server" ControlToCompare="TextPassword" ControlToValidate="TextConfirmPassword" ErrorMessage="PASSWORD NOT MATCHED" ForeColor="Red"></asp:CompareValidator></td>
                 </tr>
             
-            <tr><td class="auto-style9"></td>
+            <tr>
                 <td class="auto-style10"> <asp:Button ID="ResetButton" runat="server" Text="Reset" OnClick="Reset_Click" BackColor="#FF9933" ForeColor="Black"/>  </td>
                 <td class="auto-style10"> <asp:Button ID="Button1" runat="server" Text="Register" OnClick="RegisterButton_Click" BackColor="#FF9933" ForeColor="Black"/>  </td>
                 <td class="auto-style11"><asp:Label ID="WelcomeMessage" runat="server" ForeColor="Green"></asp:Label></td>
